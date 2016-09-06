@@ -1,0 +1,32 @@
+{
+  "General": [{
+    "title": "General Instructions",
+    "text": "<p> Throughout the experiment, you will see various instruction screens such as this one. Make sure to read each instruction screen carefully and completely. <br> </p> <p> Please do not write anything down, do not click the back button on your browser, and do not open other tabs or browsers during the experiment. </p> <p> Thank you for your participation! Click 'Continue' when you are ready to start the experiment. </p>"
+  },
+    {
+      "title": "Reading Passage",
+      "text": "<br> <b> <center> Please Read All Instructions Carefully and Completely. </center> </b> <br> In the first part of the experiment, you will read a passage that describes the formation of lightning storms. </br> <br> Your task is to read and study the passage in order to be able to remember information about to lightning storms later. You will read and study the text passage for a minimum of 5 minutes. When 5 minutes have passed, a button labeled 'Continue' will appear. Press the 'Continue' button when you have finished studying the text. <br><br> Please do not write anything down, do not click the back button on your browser, and do not open other tabs or browsers during the experiment. <br><br> Click 'Continue' when you are ready to start the experiment."
+    }],
+
+  "Restudy" : {
+    "title": "Restudy Instructions",
+    "text": "<br> <b> <center> Please Read All Instructions Carefully and Completely. </center> </b> <br> In the next part of the experiment, you will restudy the text about lightning storms. <br><br> Your task is to read and study the passage in order to be able to remember information about to lightning storms later. You will read and study the text passage for a minimum of 5 minutes. When 5 minutes have passed, a button labeled 'Continue' will appear. Press the 'Continue' button when you have finished studying the text. <br><br> Please do not write anything down, do not click the back button on your browser, and do not open other tabs or browsers during the experiment. <br><br> Click 'Continue' when you are ready to start the experiment."
+  },
+
+  "conceptMapping" : {
+    "title": "Concept Mapping Instructions",
+    "text": "<br> <b> <center> Please Read All Instructions Completely and Carefully </center> </b> <br> In the next part of the experiment, you will grade a past participant's performance on a quiz that tested how well that person remembered the English translation to the Swahili word. </br> <br> Place your left index finger on the 'F' key and your right index finger on the 'J' key. </br> <br> Press the 'F' key when you think the English definition of the Swahili word is <b> INCORRECT. </b> </br> <br> Press the 'J' key when you think the English definition of the Swahili word is <b> CORRECT. </b> </br> <br> You will have 8 seconds to respond to each question. If you respond sooner than that the next question will appear. If you do not respond within 8 seconds then the next question will be presented. </br> <br> <b> Note: An answer key will be provided for you. </b>  <br> <br> Click 'Continue' when you are ready to begin."
+  },
+
+  "howToConceptMap" : {
+    "title": "How To Concept Map",
+    "text": "<br> <b> <center> Please Read All Instructions Completely and Carefully </center> </b> <br> In the next part of the experiment, you will grade a past participant's performance on a quiz that tested how well that person remembered the English translation to the Swahili word. </br> <br> Place your left index finger on the 'F' key and your right index finger on the 'J' key. </br> <br> Press the 'F' key when you think the English definition of the Swahili word is <b> INCORRECT. </b> </br> <br> Press the 'J' key when you think the English definition of the Swahili word is <b> CORRECT. </b> </br> <br> You will have 8 seconds to respond to each question. If you respond sooner than that the next question will appear. If you do not respond within 8 seconds then the next question will be presented. </b>  <br> <br> Click 'Continue' when you are ready to begin."
+  },
+
+  "Recall" : {
+  "title": "Recall Instructions",
+  "text": "<br> <b> <center> Please Read All Instructions Completely and Carefully </center> </b> <br> In the next part of the experiment, your memory will be tested for the text about lightning storms. </br> <br> A text box will be presented on the screen that you will be able to type into. Your job will be to recall as much of the information as you can from the text. You will have to spend at least 5 minutes trying to recall the material. You may spend more than 5 minutes recalling if you want to. </br> <br> Please recall as much as you can, even if it takes more than 5 minutes. We realize that this is a difficult task, but try to recall as much as you can during the entire 5 minute recall period. When 5 minutes is over, you may advance by pressing the 'Continue' button when you are ready. <br><br> Please do not write anything down, do not click the back button on your browser, and do not open other tabs or browsers during the experiment. <br><br> Click 'Continue' when you are ready to start the experiment."
+
+  }
+}
+

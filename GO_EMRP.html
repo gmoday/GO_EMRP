@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/jspsych.css">
+
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <!-- Then jsPsych -->
+    <script src="jspsych.js"></script>
+
+    <!-- Plugins -->
+    <script src="plugins/jspsych-text.js"></script>
+    <script src="plugins/pcllab-free-recall-text.js"></script>
+    <script src="plugins/pcllab-instructions.js"></script>
+    <script src="plugins/pcllab-study-text.js"></script>
+
+
+
+
+
+    <title>GO_EMRP</title>
+</head>
+<body>
+<div id="experiment_container" class="container-fluid"></div>
+</body>
+
+<script>
+
+    // Define the main timeline     
+    myTimeline = [];
+
+    //Get subjective number
+    subNum = prompt("Enter the subject number.");
+
+    // While loop verification for entering correct condition
+    condition = false
+    while (condition == false){
+        subCond = prompt("What is the condition?"); // Get condition
+        subCond = subCond.toUpperCase();
+        if (subCond == 'A'){
+            condition = true
+        } else if (subCond == 'B'){
+            condition = true
+        }
+    };
+    
+    // Add subject number and condition to data
+    jsPsych.data.addProperties({
+        subject: subNum,
+        condition: subCond
+    });
+
+
+
+// *** Instructions ***
+
+
+    // Define welcomeBlock
+    var welcomeBlock = {
+        type: 'text',
+        text: "<font size = '5'> <br> <br>  <center> Welcome to the experiment. <br> <br> Please wait for the experimenter. </br> </br> </br> </br> </center>"
+    };
+
+    // Define General Instructions
+    var generalInstructions = { 
+        type: 'pcllab-instructions',
+        url: 'materials/instructions.json',
+        label: 'General'
+    };
+
+
+
+    // Instructions for Phase 2
+
+
+    // Instructions on how to CM
+    var conceptMappingInstructions = { 
+        type: 'pcllab-instructions',
+        url: 'materials/instructions.json',
+        label: 'conceptMapping'
+    };
+
+    // Define instructions for Restudying
+    var studyInstructions = {
+        type: 'pcllab-instructions',
+        url: 'materials/instructions.json',
+        label: 'Restudy'
+    };  
+
+    // Define instructions for Recalling
+    var recallInstructions = {
+        type: 'pcllab-instructions',
+        url: 'materials/instructions.json',
+        label: 'Recall'
+    };
+
+
+
+// *** Tasks
+
+    //Define studyText
+    var studyTask = {
+        type: 'pcllab-study-text',
+        url: 'materials/texts.json',
+        minimum_time: 1000 * 1,
+        label: "label1"
+    };
+    
+
+    var recallTask = {
+        type: 'pcllab-free-recall-text',
+        url: 'materials/recall-questions.json',
+        minimum_time: 1000 * 1,
+        label: 'lightening',
+        title: "Recall as much information as you can regarding the passage that discussed Lightning."
+    };
+
+
+    
+// *** Timeline ***
+
+    // Run welcomeBlock (screen that says wait for experimenter)
+    myTimeline.push(welcomeBlock); 
+
+    // Display general experiment instructions and study text instructions
+    myTimeline.push(generalInstructions);
+
+    // Run studyTask (passage is displayed)
+    myTimeline.push(studyTask);
+
+
+    // *** Condtions ***
+
+       // Condition A = "sMAP[rsr]"
+    if (subCond == 'A') {
+        // Map Training?
+        // studyInstructions
+        // studyTask
+        // mapInstructions
+        // mapTask
+
+        myTimeline.push(recallInstructions);       // recallInstructions
+        myTimeline.push(recallTask);              //  Recall
+        myTimeline.push(studyInstructions);      // studyInstructions
+        myTimeline.push(studyTask);             // Study
+        myTimeline.push(recallInstructions);   // recallInstructions
+        myTimeline.push(recallTask);          // Recall
+
+
+    // Condition B = s[rsr]
+    } else if (subCond == 'B') {
+        myTimeline.push(recallInstructions);       // recallInstructions
+        myTimeline.push(recallTask);              //  Recall
+        myTimeline.push(studyInstructions);      // studyInstructions
+        myTimeline.push(studyTask);             // Study
+        myTimeline.push(recallInstructions);   // recallInstructions
+        myTimeline.push(recallTask);          // Recall
+
+
+    } else {
+        alert("Invalid Subject Condition");
+    };
+
+
+    // end screen
+    var endBlock = {
+        type: 'text',
+        text: "<font size = '5'> <br> <br>  <center> The experiment has concluded. <br> <br> Please wait for the experimenter. </br> </br> </br> </br> </center>"
+    };
+
+    myTimeline.push(endBlock);
+
+    
+// *** Experiment GO ***
+    jsPsych.init({
+        display_element: $("div#experiment_container"),
+        timeline: myTimeline,
+        fullscreen: false,
+        on_finish: function () {
+            jsPsych.data.displayData();
+        }
+    })
+
+
+</script>
+</html>
